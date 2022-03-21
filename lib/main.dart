@@ -24,12 +24,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final platform = Theme.of(context).platform;
 
-    return MaterialApp(
+    return new MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
+      theme: new ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(
+      home: new MyHomePage(
         title: 'Downloader',
         platform: platform,
       ),
@@ -204,7 +204,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onItemClick: (task) {
           _openDownloadedFile(task).then((success) {
             if (!success) {
-              Scaffold.of(context).showSnackBar(const SnackBar(
+              Scaffold.of(context).showSnackBar(SnackBar(
                   content: Text('Cannot open this file')));
             }
           });
